@@ -20,7 +20,7 @@ function Chapters({ route, navigation }){
         <SelectText>Selecione o capítulo</SelectText>
       </Header>
       <Name>{name}</Name>
-      <ChaptersList route={route} navigation={navigation}/>
+      <ChaptersList route={route} navigation={navigation} name={name} abbrev={abbrev}/>
     </Container>
   );
 }

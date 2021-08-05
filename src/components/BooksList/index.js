@@ -14,8 +14,8 @@ function ListedBooks( { navigation } ){
   function toggle(Test){ SetTestament(Test) }
   const [Testament, SetTestament] = useState("VT")
 
-  const Item = ( { name, testament, abbrev } ) => (testament == Testament)? (
-    <Book onPress={ () => navigation.navigate('Chapters',{ name: name, abbrev: abbrev }) }>
+  const Item = ( { name, testament, abbrev, chapters } ) => (testament == Testament)? (
+    <Book onPress={ () => navigation.navigate('Chapters',{ name: name, abbrev: abbrev, chapters: chapters }) }>
       <BookName> { name } </BookName>
     </Book>
   ):null

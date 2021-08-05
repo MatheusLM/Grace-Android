@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import React from 'react';
 
 import {
   Listed, ListChapters, ChapterButton, Margin, ChapterText
@@ -7,8 +6,11 @@ import {
 
 const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgMDIgMjAyMSAxNjowMzozMyBHTVQrMDAwMC4yMDAwdHR1QGdtYWlsLmNvbSIsImlhdCI6MTYyNzkyMDIxM30.lfeWPXO6QmAaze-ArjWt6GyGJSyoX4Vn022S7zqNnU0";
 
-const Chapter = ( { chapter } ) => (
-  <ChapterButton key={chapter}>
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Chapter = ( { chapter, func, navigation, name, abbrev } ) => (
+  <ChapterButton key={func} onPress={ () => navigation.navigate('Verses',{name: name, abbrev:abbrev, chapter:chapter}) }>
     <Margin>
       <ChapterText>{chapter}</ChapterText>
     </Margin>
@@ -16,24 +18,12 @@ const Chapter = ( { chapter } ) => (
 )
 
 function ChaptersList({ route, navigation }){
-  const { name, abbrev } = route.params;
-  const [Chapters, setChapters] = useState([]);
-
+  const { name, chapters, abbrev } = route.params;
   const buttons = [];
-  function looping(){
-    for( let i=1; i<=Chapters; i++){
-      buttons.push(<Chapter chapter={i}/>)
-    }
+  for( let i=1; i<=chapters; i++){
+    buttons.push(<Chapter chapter={i} func={ Math.random(0,1)+i } navigation={navigation} name={name} abbrev={abbrev}/>)
   }
 
-  useEffect( () => {
-    Axios.get(`https://www.abibliadigital.com.br/api/books/${abbrev}`, { 'headers': { 'Authorization': TOKEN } })
-    .then( ({data}) => {
-      setChapters(data.chapters);
-    } )
-    .catch( (error) => console.log(error) )
-  }, [] )
-  looping();
   return(
     <Listed>
         <ListChapters>
