@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 
 import BooksList from '../../assets/books.json';
@@ -10,11 +10,10 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function ListedBooks( { navigation } ){
-  function toggle(Test){ SetTestament(Test) }
-  const [Testament, SetTestament] = useState("VT")
+function ListedBooks( { navigation, testamentOrder } ){
+  const [Testament, SetTestament] = useState(testamentOrder);
 
-  const Item = ( { name, testament, abbrev, chapters } ) => (testament == Testament)? (
+  const Item = ( { name, testament, abbrev, chapters } ) => (testament == testamentOrder)? (
     <Book key={name} onPress={ () => navigation.navigate('Chapters',{ name: name, abbrev: abbrev, chapters: chapters }) }>
       <BookName> { name } </BookName>
     </Book>

@@ -39,6 +39,7 @@ export const MenuButtonOld = styled.TouchableOpacity`
   align-items: center;
   background-color: #1852E7;
 `;
+
 export const MenuButtonNew = styled.TouchableOpacity`
   width: 112px;
   height: 100%;
