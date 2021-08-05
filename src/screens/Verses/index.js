@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { StatusBar, Image, Text } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
 import ArrowImage from '../../assets/arrow-left.png';
 import {
   Container, Header, Arrow, SelectText, Name, Chapter
 } from './styles';
 
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgMDIgMjAyMSAxNjowMzozMyBHTVQrMDAwMC4yMDAwdHR1QGdtYWlsLmNvbSIsImlhdCI6MTYyNzkyMDIxM30.lfeWPXO6QmAaze-ArjWt6GyGJSyoX4Vn022S7zqNnU0";
+import VersesList from '../../components/VersesList';
 
 const Verses = ({ route, navigation }) => {
   const { name, abbrev, chapter } = route.params;
@@ -20,6 +20,7 @@ const Verses = ({ route, navigation }) => {
         {name+" "}
         <Chapter>{chapter}</Chapter>
       </Name>
+      <VersesList route={route} navigation={navigation}/>
     </Container>
   );
 }

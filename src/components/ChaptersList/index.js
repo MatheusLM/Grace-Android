@@ -9,8 +9,8 @@ const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgM
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Chapter = ( { chapter, func, navigation, name, abbrev } ) => (
-  <ChapterButton key={func} onPress={ () => navigation.navigate('Verses',{name: name, abbrev:abbrev, chapter:chapter}) }>
+const Chapter = ( { chapter, navigation, name, abbrev } ) => (
+  <ChapterButton key={Math.random(0,1)} onPress={ () => navigation.navigate('Verses',{name: name, abbrev:abbrev, chapter:chapter}) }>
     <Margin>
       <ChapterText>{chapter}</ChapterText>
     </Margin>
@@ -20,14 +20,20 @@ const Chapter = ( { chapter, func, navigation, name, abbrev } ) => (
 function ChaptersList({ route, navigation }){
   const { name, chapters, abbrev } = route.params;
   const buttons = [];
-  for( let i=1; i<=chapters; i++){
-    buttons.push(<Chapter chapter={i} func={ Math.random(0,1)+i } navigation={navigation} name={name} abbrev={abbrev}/>)
-  }
+  for( let i=1; i<=chapters; i++) buttons.push(i)
 
   return(
     <Listed>
         <ListChapters>
-          { buttons.map( (chapter) => chapter) }
+          {
+            buttons.map( (chapter) =>
+              <Chapter
+                key={chapter}
+                chapter={chapter}
+                navigation={navigation}
+                name={name}
+                abbrev={abbrev}/>)
+          }
         </ListChapters>
       </Listed>
   );
