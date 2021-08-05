@@ -12,7 +12,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function ListedBooks( { navigation } ){
   function toggle(Test){ SetTestament(Test) }
-
   const [Testament, SetTestament] = useState("VT")
 
   const Item = ( { name, testament, abbrev } ) => (testament == Testament)? (
@@ -20,7 +19,7 @@ function ListedBooks( { navigation } ){
       <BookName> { name } </BookName>
     </Book>
   ):null
-  const renderItem = ( { item } ) => <Item name={ item.name } abbrev={ item.abbrev.pt } testament={ item.testament }/>
+  const renderItem = ( { item } ) => <Item name={ item.name } abbrev={ item.abbrev.pt } testament={ item.testament } chapters={ item.chapters }/>
 
   return(
     <Books

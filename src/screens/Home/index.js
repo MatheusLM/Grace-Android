@@ -17,10 +17,10 @@ function Home ({navigation}){
       <WelcomeText>Matheus Lopes Marques</WelcomeText>
       <Menu>
         <MenuButtons>
-          <MenuButtonOld onPress={ () => toggle("VT") } backgroundColor="red">
+          <MenuButtonOld>
             <MenuText>Antigo</MenuText>
           </MenuButtonOld>
-          <MenuButtonNew onPress={ () => toggle("NT") }>
+          <MenuButtonNew>
             <MenuText>Novo</MenuText>
           </MenuButtonNew>
         </MenuButtons>
