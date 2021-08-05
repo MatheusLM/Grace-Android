@@ -5,7 +5,7 @@ export const Container = styled.SafeAreaView`
   flex-grow: 1;
   background: #0E0E0E;
   color: white;
-  padding: 84px 22px 0;
+  padding: 96px 16px 0;
 `;
 
 export const WelcomeText = styled.Text`
@@ -13,13 +13,13 @@ export const WelcomeText = styled.Text`
   height: auto;
   font-size: 28px;
   padding: 2px 8px;
-  color: white;
+  color: #e0e0e0;
 `;
 
 export const Menu = styled.View`
   width: 100%;
   height: 32px;
-  margin-top: 48px;
+  margin-top: 24px;
   background-color: transparent;
   flex-direction: row;
   justify-content: space-between;
@@ -49,7 +49,7 @@ export const MenuButtonNew = styled.TouchableOpacity`
 `;
 
 export const MenuText = styled.Text`
-  color: white;
+  color: #e0e0e0;
   font-size: 15px;
 `;
 
@@ -66,6 +66,7 @@ export const ConfigButton = styled.TouchableOpacity`
 export const Books = styled.FlatList`
   width: 100%;
   flex-grow: 1;
+  flex: 1;
   margin-top: 28px;
   margin-bottom: 8px;
   background-color: transparent;
@@ -73,7 +74,7 @@ export const Books = styled.FlatList`
 
 export const Book = styled.TouchableOpacity`
   width: 100%;
-  height: 70px;
+  height: 72px;
   background-color: #212121;
   margin-bottom: 8px;
   border-radius: 8px;
@@ -81,7 +82,6 @@ export const Book = styled.TouchableOpacity`
   padding: 8px 24px;
 `;
 export const BookName = styled.Text`
-  background-color: red;
-  color: white;
-  font-size: 16px;
+  color: #b0b0b0;
+  font-size: 17px;
 `;
