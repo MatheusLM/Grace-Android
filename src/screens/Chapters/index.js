@@ -17,7 +17,7 @@ function Chapters({ route, navigation }){
       <StatusBar backgroundColor={ 'transparent' } translucent={ true }/>
       <Header onPress={ () => navigation.goBack() }>
         <Arrow source={ArrowImage}/>
-        <SelectText>Selecione o capítulo</SelectText>
+        <SelectText>Voltar para livros</SelectText>
       </Header>
       <Name>{name}</Name>
       <ChaptersList route={route} navigation={navigation} name={name} abbrev={abbrev}/>
