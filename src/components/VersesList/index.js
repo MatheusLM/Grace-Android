@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { VerseList, VerseBox, VerseText, VerseNumber } from './styles';
 
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgMDIgMjAyMSAxNjowMzozMyBHTVQrMDAwMC4yMDAwdHR1QGdtYWlsLmNvbSIsImlhdCI6MTYyNzkyMDIxM30.lfeWPXO6QmAaze-ArjWt6GyGJSyoX4Vn022S7zqNnU0";
+const SAVE_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgMDIgMjAyMSAxNjowMzozMyBHTVQrMDAwMC4yMDAwdHR1QGdtYWlsLmNvbSIsImlhdCI6MTYyNzkyMDIxM30.lfeWPXO6QmAaze-ArjWt6GyGJSyoX4Vn022S7zqNnU0";
 
 const Verse = ({route, navigation, number, text}) => (
   <VerseBox key={number} activeOpacity={0.5}>
@@ -23,6 +23,7 @@ function VersesList({ route, navigation }){
   const getData = async () => {
     try{
       const result = await AsyncStorage.getItem(`@${abbrev}-${chapter}`)
+      const TOKEN = await AsyncStorage.getItem('@TOKEN')
       if( !result ){
         Axios({
           method: "GET",
@@ -30,7 +31,7 @@ function VersesList({ route, navigation }){
           headers: { Authorization: TOKEN }
         })
         .then( ({data}) => {
-          setVerses(data.verses)
+          setVerses(data.verses);
           AsyncStorage.setItem(`@${abbrev}-${chapter}`, JSON.stringify(data.verses));
         } )
       }else{
