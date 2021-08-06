@@ -14,7 +14,7 @@ function Initial({navigation}){
   const getData = async () => {
     try{
       // Descomentar para testes
-       await AsyncStorage.setItem('@TOKEN', '')
+      // await AsyncStorage.setItem('@TOKEN', '')
       const TOKEN = await AsyncStorage.getItem('@TOKEN')
       if( !TOKEN ){
         navigation.navigate("Login")

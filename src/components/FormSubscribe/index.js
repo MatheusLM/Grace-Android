@@ -23,7 +23,6 @@ function FormSubscribe({navigation}){
     })
     .then( ({data}) => {
       const storeData = async (data) => {
-        console.log(data)
         try{
           await AsyncStorage.setItem('@EMAIL', JSON.stringify(data.email))
           await AsyncStorage.setItem('@NAME', JSON.stringify(data.name))

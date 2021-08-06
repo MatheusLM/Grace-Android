@@ -19,7 +19,6 @@ function FormLogin({navigation}){
     })
     .then( ({data}) => {
       const storeData = async (data) => {
-        console.log(data)
         try{
           await AsyncStorage.setItem('@EMAIL', JSON.stringify(data.email))
           await AsyncStorage.setItem('@NAME', JSON.stringify(data.name))
@@ -31,7 +30,6 @@ function FormLogin({navigation}){
       storeData(data)
     })
     .catch( ({message}) => {
-      console.log(message)
       if( message == "Request failed with status code 404" ){
         setModalText("Dados incorretos")
       }else{
