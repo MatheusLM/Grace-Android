@@ -13,8 +13,10 @@ function Initial({navigation}){
 
   const getData = async () => {
     try{
+      // Descomentar para testes
+       await AsyncStorage.setItem('@TOKEN', '')
       const TOKEN = await AsyncStorage.getItem('@TOKEN')
-      if( !TOKEN ){ // REMOVER o ! ao terminar os testes
+      if( !TOKEN ){
         navigation.navigate("Login")
       }else{
         navigation.navigate("Home")

@@ -3,11 +3,13 @@ import { StatusBar, Text } from 'react-native';
 import Axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { FormBox, InputText, InputSend, InputSendText } from './styles'
+import { FormBox, InputText, InputSend, InputSendText, ModalAlert, ModalContainer, ModalBox, ModalText, ModalButton, ModalButtonText } from './styles'
 
 function FormLogin({navigation}){
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [modalVisible, setModalVisible] = useState(false)
+  const [modalText, setModalText] = useState("Erro")
 
   function login(navigation){
     Axios({
@@ -27,7 +29,16 @@ function FormLogin({navigation}){
         catch(e){ console.log(e) }
       }
       storeData(data)
-    }) .catch( (e) => console.log(e) )
+    })
+    .catch( ({message}) => {
+      console.log(message)
+      if( message == "Request failed with status code 404" ){
+        setModalText("Dados incorretos")
+      }else{
+        setModalText("Senha incorreta")
+      }
+      setModalVisible(true)
+    } )
   }
 
   return(
@@ -37,6 +48,16 @@ function FormLogin({navigation}){
       <InputSend onPress={ () => login(navigation) }>
         <InputSendText>Entrar</InputSendText>
       </InputSend>
+      <ModalAlert animationType={"slide"} visible={modalVisible} transparent={true}>
+        <ModalContainer>
+          <ModalBox>
+            <ModalText>{modalText}</ModalText>
+            <ModalButton onPress={ () => setModalVisible(false) }>
+              <ModalButtonText>Fechar</ModalButtonText>
+            </ModalButton>
+          </ModalBox>
+        </ModalContainer>
+      </ModalAlert>
     </FormBox>
   );
 }
