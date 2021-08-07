@@ -82,17 +82,84 @@ export const ConfigBox = styled.View`
   background: transparent;
 `;
 
+export const ConfigHeader = styled.View`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  flex-direction: row;
+  margin-bottom: 32px;
+`;
+
 export const ConfigTitle = styled.Text`
+  width: 100%;
   font-size: 32px;
   color: #b0b0b0;
   font-weight: bold;
   text-align: center;
+  margin-right: -36px;
 `;
 
 export const ConfigClose = styled.TouchableOpacity`
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background: #212121;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  align-self: flex-end;
+`;
+
+export const ConfigCloseImage = styled.Image`
+  width: 24px;
+  height: 24px;
+  background: transparent;
+`;
+
+export const ConfigArea = styled.View`
+  width: 100%;
+  flex: 1;
+  padding: 2px;
+`;
+
+export const ConfigList = styled.ScrollView`
+  width: 100%;
+  flex: 1;
+`;
+
+export const ConfigField = styled.View`
+  width: 100%;
+  margin-bottom: 16px;
+  flex-direction: row;
+`;
+
+export const ConfigName = styled.Text`
+  width: 50%;
+  flex: 1;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #b0b0b0;
+  align-self: flex-start;
+`;
+
+export const ConfigSwitch = styled.Switch`
+  width: 50px;
+  align-self: flex-start;
+`;
+
+export const LogoutButton = styled.TouchableOpacity`
+  width: 80%;
+  height: 40px;
+  background: #212121;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-top: 16px;
+`;
+
+export const LogoutButtonText = styled.Text`
+  font-size: 20px;
+  color: white;
 `;

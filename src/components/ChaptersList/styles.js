@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Listed = styled.ScrollView`
   width: 100%;
   height: auto;
-  margin-bottom: 160px;
+  margin-bottom: 150px;
   padding: 0;
 `;
 
