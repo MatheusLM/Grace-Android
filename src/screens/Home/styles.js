@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const Container = styled.SafeAreaView`
@@ -62,4 +61,38 @@ export const ConfigButton = styled.TouchableOpacity`
   align-items: center;
   background-color: #212121;
   border-radius: 8px;
+`;
+
+export const ConfigModal = styled.Modal`
+  width: 100%;
+`;
+
+export const ConfigCenter = styled.View`
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: #0e0e0e;
+  padding: 32px 0 8px 0;
+`;
+
+export const ConfigBox = styled.View`
+  flex: 1;
+  width: 88%;
+  background: transparent;
+`;
+
+export const ConfigTitle = styled.Text`
+  font-size: 32px;
+  color: #b0b0b0;
+  font-weight: bold;
+  text-align: center;
+`;
+
+export const ConfigClose = styled.TouchableOpacity`
+  width: 32px;
+  height: 32px;
+  background: #212121;
+  justify-content: center;
+  align-items: center;
 `;

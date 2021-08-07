@@ -3,6 +3,9 @@
     "name": "grace",
     "slug": "grace",
     "version": "1.0.0",
+    "androidNavigationBar": {
+      "visible": "immersive"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]

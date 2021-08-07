@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from 'react-native';
 
 import BooksList from '../../assets/books.json';
 
 import {
   Books, Book, BookName
 } from './styles';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function ListedBooks( { navigation, testamentOrder } ){
   const [Testament, SetTestament] = useState(testamentOrder);

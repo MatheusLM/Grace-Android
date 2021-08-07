@@ -18,7 +18,7 @@ export const VerseBox = styled.TouchableOpacity`
 
 export const VerseText = styled.Text`
   font-size: 20px;
-  color: black;
+  color: #e0e0e0;
 `;
 
 export const VerseNumber = styled.Text`

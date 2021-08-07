@@ -7,9 +7,6 @@ import {
 
 import ChaptersList from '../../components/ChaptersList'
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 function Chapters({ route, navigation }){
   const { name, abbrev } = route.params;
   return (

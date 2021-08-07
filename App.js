@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { hideNavigationBar } from 'react-native-navigation-bar-color';
 
 import Initial from './src/screens/Initial'
 import Actions from './src/screens/Login'
@@ -12,8 +13,12 @@ import Verses from './src/screens/Verses'
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const hide = () => {
+    hideNavigationBar();
+  };
+  hide()
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator initialRouteName="Initial">
         <Stack.Screen name="Initial" component={Initial} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Actions} options={{headerShown:false}}/>

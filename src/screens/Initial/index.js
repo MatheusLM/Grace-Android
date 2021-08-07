@@ -6,9 +6,6 @@ import {
   Container
 } from './styles';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 function Initial({navigation}){
 
   const getData = async () => {

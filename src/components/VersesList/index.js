@@ -5,8 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { VerseList, VerseBox, VerseText, VerseNumber } from './styles';
 
-const SAVE_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBBdWcgMDIgMjAyMSAxNjowMzozMyBHTVQrMDAwMC4yMDAwdHR1QGdtYWlsLmNvbSIsImlhdCI6MTYyNzkyMDIxM30.lfeWPXO6QmAaze-ArjWt6GyGJSyoX4Vn022S7zqNnU0";
-
 const Verse = ({route, number, text}) => (
   <VerseBox key={number} activeOpacity={0.5}>
     <VerseText>
