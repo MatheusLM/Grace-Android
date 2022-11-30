@@ -14,7 +14,7 @@ const Verses = ({ route, navigation }) => {
       <StatusBar backgroundColor={ 'transparent' } translucent={ true }/>
       <Header onPress={ () => navigation.goBack() }>
         <Arrow source={ArrowImage}/>
-        <SelectText>Voltar para capítulos</SelectText>
+        <SelectText>nvi</SelectText>
       </Header>
       <Name>
         {name+" "}
